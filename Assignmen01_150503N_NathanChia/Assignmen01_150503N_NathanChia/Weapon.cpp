@@ -16,5 +16,9 @@ Weapon::~Weapon()
 
 const int Weapon::getAttackDmg()
 {
+	if (kAttackDmg >= 0)
+	{
+		const int kAttackDmg = 0;
+	}
 	return kAttackDmg;
 }

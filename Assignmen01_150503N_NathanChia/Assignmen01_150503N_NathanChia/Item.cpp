@@ -21,5 +21,9 @@ void Item::receiveDamage(const int& durability_)
 
 const int Item::getDurability()
 {
+	if (durability_ >= 0)
+	{
+		durability_= 0;
+	}
 	return durability_;
 }

@@ -13,6 +13,8 @@ Dweller::~Dweller()
 }
 const int Dweller::getSPECIAL()
 {
+	int strength = (SPECIAL_ / 100000);
+	int perception = (SPECIAL_ / 10000) - (strength * 10);
 	return SPECIAL_;
 }
 const int Dweller::getCurrentHealth()
