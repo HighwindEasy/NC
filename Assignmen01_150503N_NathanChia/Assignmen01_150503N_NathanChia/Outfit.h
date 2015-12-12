@@ -6,6 +6,7 @@ class Outfit : public GameObject
 private:
 	const int kSPECIAL;
 public:
+	Outfit();
 	Outfit(const string&, const int&, const int&);
 	~Outfit();
 	const int getSPECIAL();

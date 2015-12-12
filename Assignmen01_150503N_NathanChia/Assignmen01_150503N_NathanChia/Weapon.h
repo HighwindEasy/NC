@@ -6,6 +6,7 @@ class Weapon :public Item
 private:
 	const int kAttackDmg;
 public:
+	Weapon();
 	Weapon(const string&, const int&, const int&);
 	~Weapon();
 	const int getAttackDmg();

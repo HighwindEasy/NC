@@ -6,6 +6,7 @@ struct Vec2D
 	double x, y;
 	Vec2D();
 	Vec2D(double, double);
+	~Vec2D();
 };
 
 #endif
