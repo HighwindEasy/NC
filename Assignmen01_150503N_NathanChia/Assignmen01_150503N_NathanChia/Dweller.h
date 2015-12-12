@@ -3,7 +3,7 @@
 #include "Outfit.h"
 #include "Weapon.h"
 #include "Vec2D.h"
-class Dweller : public GameObject
+class Dweller : public Outfit, public Weapon
 {
 private:
 	Vec2D position_;
@@ -16,6 +16,7 @@ private:
 	Weapon* weapon_;
 protected:
 public:
+	Dweller();
 	Dweller(const string&, const int&);
 	~Dweller();
 	const int getSPECIAL();
