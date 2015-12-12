@@ -13,9 +13,18 @@ Dweller::~Dweller()
 }
 const int Dweller::getSPECIAL()
 {
-	int strength = (SPECIAL_ / 100000);
-	int perception = (SPECIAL_ / 10000) - (strength * 10);
-	return SPECIAL_;
+	int strength = (SPECIAL_ / 1000000);
+	int perception = (SPECIAL_ / 100000) - (strength * 10);
+	int endurance = (SPECIAL_ / 10000) - (strength * 100) - (perception * 10);
+	int charisma = (SPECIAL_ / 1000) - (strength * 1000) - (perception * 100) - (endurance * 10);
+	int intelligence = (SPECIAL_ / 100) - (strength * 10000) - (perception * 1000) - (endurance * 100) - (charisma * 10);
+	int agility = (SPECIAL_)-(strength * 100000) - (perception * 10000) - (endurance * 1000) - (charisma * 100) - (intelligence * 10);
+	int luck = (SPECIAL_)-(strength * 100000) - (perception * 100000) - (endurance * 10000) - (charisma * 1000) - (intelligence * 100) - (agility * 10);
+	if (outfit_ = 0)
+	{
+		return SPECIAL_;
+
+	}
 }
 const int Dweller::getCurrentHealth()
 {
