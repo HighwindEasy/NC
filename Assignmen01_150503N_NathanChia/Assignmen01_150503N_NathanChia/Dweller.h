@@ -17,7 +17,7 @@ private:
 protected:
 public:
 	Dweller(const string&, const int&);
-	~Dweller();
+	virtual ~Dweller();
 	const int getSPECIAL();
 	const int getCurrentHealth();
 	const int getCurrentRadDamage();

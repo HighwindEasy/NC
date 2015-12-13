@@ -128,11 +128,11 @@ void Dweller::receiveEquipmentDamage(const int& durability_)
 }
 void Dweller::addStimpak(const int& stimpak_)
 {
-
+	this->stimpak_ = stimpak_;
 }
 void Dweller::addRadAway(const int& radaway_)
 {
-
+	this->radaway_ = radaway_;
 }
 void Dweller::useStimpak()
 {

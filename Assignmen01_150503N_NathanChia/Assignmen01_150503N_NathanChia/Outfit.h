@@ -7,7 +7,7 @@ private:
 	const int kSPECIAL;
 public:
 	Outfit(const string&, const int&, const int&);
-	~Outfit();
+	virtual ~Outfit();
 	const int getSPECIAL();
 	virtual void receiveDamage(const int &);
 
