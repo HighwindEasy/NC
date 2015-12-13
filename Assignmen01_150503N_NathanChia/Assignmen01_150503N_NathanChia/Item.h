@@ -6,7 +6,6 @@ class Item : public GameObject
 protected:
 	int durability_;
 public:
-	Item();
 	Item(const string&, const int&);
 	~Item();
 	virtual void receiveDamage(const int &) = 0;

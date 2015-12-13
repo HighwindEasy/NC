@@ -1,12 +1,17 @@
-#ifndef VEC2D_H_
-#define VED2D_H_
+#ifndef VEC2D_H
+#define VEC2D_H
 
 struct Vec2D
 {
-	double x, y;
+public:
 	Vec2D();
 	Vec2D(double, double);
-	~Vec2D();
+	virtual ~Vec2D();
+	double x;
+	double y;
 };
 
 #endif
+// my code
+
+// NOW FOR SOME MAGICCCCCSSSSSSSSS

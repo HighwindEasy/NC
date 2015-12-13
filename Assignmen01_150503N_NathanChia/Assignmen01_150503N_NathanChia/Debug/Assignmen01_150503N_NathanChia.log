@@ -1,54 +1,20 @@
-﻿Build started 13/12/2015 2:08:10 AM.
-     1>Project "C:\Users\Exodus\Desktop\NCdata\Assignmen01_150503N_NathanChia\Assignmen01_150503N_NathanChia\Assignmen01_150503N_NathanChia.vcxproj" on node 2 (Rebuild target(s)).
-     1>ClCompile:
-         E:\Programs\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt compileCheck.cpp Dweller.cpp GameObject.cpp Item.cpp main.cpp Outift.cpp Vec2D.cpp Weapon.cpp
-         Weapon.cpp
-         Vec2D.cpp
-         Outift.cpp
-         main.cpp
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\vec2d.h(5): error C2011: 'Vec2D' : 'struct' type redefinition
-                 c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\vec2d.h(5) : see declaration of 'Vec2D'
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\main.cpp(20): error C2259: 'Dweller' : cannot instantiate abstract class
-                 due to following members:
-                 'void Item::receiveDamage(const int &)' : is abstract
-                 c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\item.h(12) : see declaration of 'Item::receiveDamage'
-         Item.cpp
-         GameObject.cpp
-         Dweller.cpp
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\dweller.cpp(29): error C2065: 'kSPECIAL_' : undeclared identifier
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\dweller.cpp(30): error C2065: 'kSPECIAL_' : undeclared identifier
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\dweller.cpp(31): error C2065: 'kSPECIAL_' : undeclared identifier
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\dweller.cpp(32): error C2065: 'kSPECIAL_' : undeclared identifier
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\dweller.cpp(33): error C2065: 'kSPECIAL_' : undeclared identifier
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\dweller.cpp(34): error C2065: 'kSPECIAL_' : undeclared identifier
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\dweller.cpp(35): error C2065: 'kSPECIAL_' : undeclared identifier
-         compileCheck.cpp
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\vec2d.h(5): error C2011: 'Vec2D' : 'struct' type redefinition
-                 c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\vec2d.h(5) : see declaration of 'Vec2D'
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\compilecheck.cpp(13): error C2259: 'Dweller' : cannot instantiate abstract class
-                 due to following members:
-                 'void Item::receiveDamage(const int &)' : is abstract
-                 c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\item.h(12) : see declaration of 'Item::receiveDamage'
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\compilecheck.cpp(15): error C2259: 'Weapon' : cannot instantiate abstract class
-                 due to following members:
-                 'void Item::receiveDamage(const int &)' : is abstract
-                 c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\item.h(12) : see declaration of 'Item::receiveDamage'
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\compilecheck.cpp(16): error C2079: 'currentPos' uses undefined struct 'Vec2D'
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\compilecheck.cpp(16): error C2078: too many initializers
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\compilecheck.cpp(16): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\compilecheck.cpp(20): error C2594: 'argument' : ambiguous conversions from 'Dweller *' to 'GameObject *const '
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\compilecheck.cpp(29): error C2664: 'void Dweller::setPosition(const Vec2D &)' : cannot convert argument 1 from 'int' to 'const Vec2D &'
-                 Reason: cannot convert from 'int' to 'const Vec2D'
-                 Source or target has incomplete type
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\compilecheck.cpp(30): error C2027: use of undefined type 'Vec2D'
-                 c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\vec2d.h(5) : see declaration of 'Vec2D'
-                 c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\vec2d.h(5) : see declaration of 'Vec2D'
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\compilecheck.cpp(30): error C2227: left of '->{dtor}' must point to class/struct/union/generic type
-                 type is 'Dweller *'
-     1>c:\users\exodus\desktop\ncdata\assignmen01_150503n_nathanchia\assignmen01_150503n_nathanchia\compilecheck.cpp(30): fatal error C1903: unable to recover from previous error(s); stopping compilation
-         Generating Code...
-     1>Done Building Project "C:\Users\Exodus\Desktop\NCdata\Assignmen01_150503N_NathanChia\Assignmen01_150503N_NathanChia\Assignmen01_150503N_NathanChia.vcxproj" (Rebuild target(s)) -- FAILED.
+﻿Build started 13/12/2015 7:32:29 PM.
+     1>Project "C:\Users\Exodus\Desktop\NCdata\Assignmen01_150503N_NathanChia\Assignmen01_150503N_NathanChia\Assignmen01_150503N_NathanChia.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         E:\Programs\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Exodus\Desktop\NCdata\Assignmen01_150503N_NathanChia\Debug\Assignmen01_150503N_NathanChia.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Exodus\Desktop\NCdata\Assignmen01_150503N_NathanChia\Debug\Assignmen01_150503N_NathanChia.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Exodus\Desktop\NCdata\Assignmen01_150503N_NathanChia\Debug\Assignmen01_150503N_NathanChia.lib" /MACHINE:X86 Debug\compileCheck.obj
+         Debug\Dweller.obj
+         Debug\GameObject.obj
+         Debug\Item.obj
+         Debug\main.obj
+         Debug\Outift.obj
+         Debug\Vec2D.obj
+         Debug\Weapon.obj
+     1>compileCheck.obj : error LNK2019: unresolved external symbol "public: void __thiscall Dweller::addStimpak(int const &)" (?addStimpak@Dweller@@QAEXABH@Z) referenced in function "void __cdecl testNames(void)" (?testNames@@YAXXZ)
+     1>compileCheck.obj : error LNK2019: unresolved external symbol "public: void __thiscall Dweller::addRadAway(int const &)" (?addRadAway@Dweller@@QAEXABH@Z) referenced in function "void __cdecl testNames(void)" (?testNames@@YAXXZ)
+     1>GameObject.obj : error LNK2001: unresolved external symbol "private: static int GameObject::count_" (?count_@GameObject@@0HA)
+     1>C:\Users\Exodus\Desktop\NCdata\Assignmen01_150503N_NathanChia\Debug\Assignmen01_150503N_NathanChia.exe : fatal error LNK1120: 3 unresolved externals
+     1>Done Building Project "C:\Users\Exodus\Desktop\NCdata\Assignmen01_150503N_NathanChia\Assignmen01_150503N_NathanChia\Assignmen01_150503N_NathanChia.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:03.76
+Time Elapsed 00:00:00.20

@@ -1,12 +1,8 @@
 #include "GameObject.h"
-GameObject::GameObject()
+
+GameObject::GameObject(const string& kName) : kName(kName)
 {
 	count_++;
-}
-
-GameObject::GameObject(const string& kName)
-{
-	
 }
 
 GameObject::~GameObject()

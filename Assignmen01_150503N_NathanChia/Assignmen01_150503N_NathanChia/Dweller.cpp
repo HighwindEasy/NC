@@ -1,10 +1,8 @@
 #include "Dweller.h"
 #include "Item.h"
-Dweller::Dweller()
-{
+Dweller::Dweller(const string& kName, const int& SPECIAL_) : position_(0, 0), SPECIAL_(SPECIAL_), health_(100), radiation_(0),
+stimpak_(0), radaway_(0), outfit_(NULL), weapon_(NULL), GameObject(kName)
 
-}
-Dweller::Dweller(const string& kName, const int& SPECIAL_)
 {
 
 }
@@ -82,6 +80,7 @@ const int Dweller::getSPECIAL()
 		return SPECIAL_;
 
 	}
+	return SPECIAL_;
 }
 const int Dweller::getCurrentHealth()
 {
@@ -97,38 +96,72 @@ const int Dweller::getAttackDmg()
 }
 void Dweller::setPosition(const Vec2D& position_)
 {
-	this->position_ = Vec2D(0,0);
 	this->position_ = position_;
+}
+const Vec2D Dweller::getPosition()
+{
+	return position_;
 }
 void Dweller::receiveHealthDamage(const int& health_)
 {
+	if (health_ >= (100 - radiation_))
+	{
+		this->health_ = 100 - radiation_;
+	}
 	this->health_ = health_;
 }
 void Dweller::receiveRadDamage(const int& radiation_)
 {
+	if (radiation_ >= 100)
+	{
+		this->radiation_ = 100;
+	}
+	if (radiation_ <= 0)
+	{
+		this->radiation_ = 0;
+	}
 	this->radiation_ = radiation_;
 }
 void Dweller::receiveEquipmentDamage(const int& durability_)
 {
-	this->durability_ = durability_;
+
+}
+void Dweller::addStimpak(const int& stimpak_)
+{
+
+}
+void Dweller::addRadAway(const int& radaway_)
+{
+
 }
 void Dweller::useStimpak()
 {
-
+	health_ += 20;
+	stimpak_ -= 1;
 }
 void Dweller::useRadAway()
 {
-
+	radiation_ -= 10;
+	radaway_ -= 1;
 }
-Dweller::Outfit* assignOutfit(Outfit* outfit_)
+Outfit* Dweller::assignOutfit(Outfit* outfit_)
 {
-
+	return outfit_;
 }
-Dweller::Weapon* assignWeapon(Weapon* weapon_)
+Weapon* Dweller::assignWeapon(Weapon* weapon_)
 {
-
+	return weapon_;
 }
 bool Dweller::isDead()
 {
-
+	bool isDead;
+	if (health_ >= 0)
+	{
+		isDead = true;
+	}
+	else
+	{
+		isDead = false;
+	}
+	return isDead;
 }

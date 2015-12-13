@@ -1,10 +1,5 @@
 #include "Weapon.h"
-Weapon::Weapon() : kAttackDmg(kAttackDmg)
-{
-
-}
-
-Weapon::Weapon(const string& kName, const int& durability_, const int& kAttackDmg) : kAttackDmg(kAttackDmg)
+Weapon::Weapon(const string& kName, const int& durability_, const int& kAttackDmg) :Item(kName,durability_), kAttackDmg(kAttackDmg) 
 {
 
 }
@@ -21,4 +16,8 @@ const int Weapon::getAttackDmg()
 		const int kAttackDmg = 0;
 	}
 	return kAttackDmg;
+}
+void Weapon::receiveDamage(const int& durability_)
+{
+	this->durability_ = durability_/2;
 }

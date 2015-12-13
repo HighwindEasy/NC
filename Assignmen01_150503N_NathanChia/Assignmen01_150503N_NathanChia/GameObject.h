@@ -10,7 +10,6 @@ private:
 protected:
 	GameObject(const string&);
 public:
-	GameObject();
 	~GameObject();
 	string getName(void);
 	static int getCount();
