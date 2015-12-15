@@ -1,8 +1,23 @@
+/****************************************************************************/
+/*!
+\file Dweller.h
+\author Nathan Chia
+\par email: 150503N@mymail.nyp.edu.sg
+\brief
+Class to define a player/character
+*/
+/****************************************************************************/
 #ifndef DWELLER_H_
 #define DWELLER_H_
 #include "Outfit.h"
 #include "Weapon.h"
 #include "Vec2D.h"
+/****************************************************************************/
+/*!
+Class Dweller:
+\brief Defines Dweller stats such as SPECIAL stats, health, radiation damage, the number of stimpaks and radaways, also for weapons and outfits should there be one equipped
+*/
+/****************************************************************************/
 class Dweller : public GameObject
 {
 private:
