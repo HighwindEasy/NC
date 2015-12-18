@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="GameObject_8cpp" kind="file" language="C++">
+    <compoundname>GameObject.cpp</compoundname>
+    <includes refid="GameObject_8h" local="yes">GameObject.h</includes>
+    <incdepgraph>
+      <node id="150">
+        <label>string</label>
+      </node>
+      <node id="148">
+        <label>Assignmen01_150503N_NathanChia/GameObject.cpp</label>
+        <link refid="GameObject.cpp"/>
+        <childnode refid="149" relation="include">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="150" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameObject_8h" kindref="compound">GameObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a4f10ed5bec5962a6ed7632ec9deb6da6" kindref="member">GameObject::count_</ref>;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classGameObject_1ab4a9826131a3c4116970e4e1e70587ff" refkind="member"><highlight class="normal"><ref refid="classGameObject_1ab4a9826131a3c4116970e4e1e70587ff" kindref="member">GameObject::GameObject</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>kName)<sp/>:<sp/>kName(kName)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject_1a4f10ed5bec5962a6ed7632ec9deb6da6" kindref="member">count_</ref>++;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" refkind="member"><highlight class="normal"><ref refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" kindref="member">GameObject::~GameObject</ref>()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGameObject_1a4f10ed5bec5962a6ed7632ec9deb6da6" kindref="member">count_</ref>--;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classGameObject_1ab7c8021dd4caa10448c87396db933e94" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1ab7c8021dd4caa10448c87396db933e94" kindref="member">GameObject::getName</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a975468b0205494c8809af8260c45f1df" kindref="member">kName</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classGameObject_1a00da4ea36f3945e1da1a2f81061b57d3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a00da4ea36f3945e1da1a2f81061b57d3" kindref="member">GameObject::getCount</ref>()</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classGameObject_1a4f10ed5bec5962a6ed7632ec9deb6da6" kindref="member">count_</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Assignmen01_150503N_NathanChia/GameObject.cpp"/>
+  </compounddef>
+</doxygen>

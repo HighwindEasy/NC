@@ -41,7 +41,7 @@ negative value, will be zero
 \exception
 
 \return
-
+returns the current value of kAttackDmg
 */
 /****************************************************************************/
 const int Weapon::getAttackDmg()
@@ -52,6 +52,18 @@ const int Weapon::getAttackDmg()
 	}
 	return kAttackDmg;
 }
+/****************************************************************************/
+/*!
+\brief
+Passes the value of durability into the weapon item, divided by 2 as it takes half damage
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 void Weapon::receiveDamage(const int& durability_)
 {
 	this->durability_ = durability_/2;

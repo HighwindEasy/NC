@@ -1,15 +1,54 @@
 #include "Dweller.h"
 #include "Item.h"
+/****************************************************************************/
+/*!
+\brief
+Default Constructor that initialises the Dweller's stats
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 Dweller::Dweller(const string& kName, const int& SPECIAL_) : position_(0, 0), SPECIAL_(SPECIAL_), health_(100), radiation_(0),
 stimpak_(0), radaway_(0), outfit_(NULL), weapon_(NULL), GameObject(kName)
 
 {
 
 }
+/****************************************************************************/
+/*!
+\brief
+Default Destructor
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 Dweller::~Dweller()
 {
 
 }
+/****************************************************************************/
+/*!
+\brief
+Seperates the SPECIAL values into individual intergers, along with the kSPECIAL
+and add them both together, and then checks if the value exceeds 9. If the value exceeds
+9 it will be set back to 9. The values are then added back together into the normal 
+
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 const int Dweller::getSPECIAL()
 {
 
@@ -82,18 +121,66 @@ const int Dweller::getSPECIAL()
 	}
 	return SPECIAL_;
 }
+/****************************************************************************/
+/*!
+\brief
+passes in the health points of the Dweller
+\param rhs
+
+\exception
+
+\return
+returns the current health of the dweller
+*/
+/****************************************************************************/
 const int Dweller::getCurrentHealth()
 {
 	return health_;
 }
+/****************************************************************************/
+/*!
+\brief
+Function that passes in value of the radiation damage received by the Dweller
+\param rhs
+
+\exception
+
+\return
+returns the currrent value of radiation_
+*/
+/****************************************************************************/
 const int Dweller::getCurrentRadDamage()
 {
 	return radiation_;
 }
+/****************************************************************************/
+/*!
+\brief
+
+\param rhs
+
+\exception
+
+\return
+returns the currrent value 0
+*/
+/****************************************************************************/
 const int Dweller::getAttackDmg()
 {
 	return 0;
 }
+/****************************************************************************/
+/*!
+\brief
+Sets the current position of the player
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 void Dweller::setPosition(const Vec2D& position_)
 {
 	this->position_ = position_;
@@ -102,6 +189,18 @@ const Vec2D Dweller::getPosition()
 {
 	return position_;
 }
+/****************************************************************************/
+/*!
+\brief
+Function that initialises the health value of the Dweller, and checks if the health 
+exceed 100- radiation damages, and sets it if so
+\param rhs
+
+\exception
+
+\return
+*/
+/****************************************************************************/
 void Dweller::receiveHealthDamage(const int& health_)
 {
 	if (health_ >= (100 - radiation_))
@@ -109,7 +208,19 @@ void Dweller::receiveHealthDamage(const int& health_)
 		this->health_ = 100 - radiation_;
 	}
 	this->health_ = health_;
-}
+}/****************************************************************************/
+/*!
+\brief
+Function that checks the current value of radiation damage received, and will 
+check it does not exceed current HP
+\param rhs
+
+\exception
+
+\return
+returns the currrent value of radiation_
+*/
+/****************************************************************************/
 void Dweller::receiveRadDamage(const int& radiation_)
 {
 	if (radiation_ >= 100)
@@ -122,36 +233,132 @@ void Dweller::receiveRadDamage(const int& radiation_)
 	}
 	this->radiation_ = radiation_;
 }
+/****************************************************************************/
+/*!
+\brief
+
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 void Dweller::receiveEquipmentDamage(const int& durability_)
 {
 
 }
+/****************************************************************************/
+/*!
+\brief
+Function that adds number of stimpaks into inventory
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 void Dweller::addStimpak(const int& stimpak_)
 {
 	this->stimpak_ = stimpak_;
 }
+/****************************************************************************/
+/*!
+\brief
+Function that adds number of radaways into inventory
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 void Dweller::addRadAway(const int& radaway_)
 {
 	this->radaway_ = radaway_;
 }
+/****************************************************************************/
+/*!
+\brief
+Function that adds health to dweller on use of stimpak, and checks to see if the hp
+ exceeds the max health
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 void Dweller::useStimpak()
 {
 	health_ += 20;
 	stimpak_ -= 1;
 }
+/****************************************************************************/
+/*!
+\brief
+Function that recudes radiation damage
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 void Dweller::useRadAway()
 {
 	radiation_ -= 10;
 	radaway_ -= 1;
 }
+/****************************************************************************/
+/*!
+\brief
+Function that assigns outfits to dweller
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 Outfit* Dweller::assignOutfit(Outfit* outfit_)
 {
 	return outfit_;
 }
+/****************************************************************************/
+/*!
+\brief
+Function that assigns weapons to the Dweller
+\param rhs
+
+\exception
+
+\return
+
+*/
+/****************************************************************************/
 Weapon* Dweller::assignWeapon(Weapon* weapon_)
 {
 	return weapon_;
-}
+}/****************************************************************************/
+/*!
+\brief
+Function that checks if the Dweller is Dead by checking if the health is below or equal to zero
+\param rhs
+
+\exception
+
+\return
+returns the bool isdead value
+*/
+/****************************************************************************/
 bool Dweller::isDead()
 {
 	bool isDead;
