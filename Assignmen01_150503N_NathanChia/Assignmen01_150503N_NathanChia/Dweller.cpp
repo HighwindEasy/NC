@@ -12,11 +12,10 @@ Default Constructor that initialises the Dweller's stats
 
 */
 /****************************************************************************/
-Dweller::Dweller(const string& kName, const int& SPECIAL_) : position_(0, 0), SPECIAL_(SPECIAL_), health_(100), radiation_(0),
-stimpak_(0), radaway_(0), outfit_(NULL), weapon_(NULL), GameObject(kName)
-
+Dweller::Dweller(const string& kName, const int& SPECIAL_) : SPECIAL_(SPECIAL_), health_(100), radiation_(0),
+stimpak_(0), radaway_(0), outfit_(NULL), weapon_(NULL),  GameObject(kName)
 {
-
+	Vec2D position_ = Vec2D(0, 0);
 }
 /****************************************************************************/
 /*!
@@ -54,25 +53,26 @@ const int Dweller::getSPECIAL()
 
 	if (outfit_ != 0) // Check for Outfit
 	{
+
 		//This enables the initialisation of Outfit individual stats
 		outfit_->getSPECIAL();
 		//Dwellers SPECIAL stats split into the 7 categories
-		int strength, perception, endurance, charisma, intelligence, agility, luck;
+		int strength = 0, perception = 0, endurance = 0, charisma = 0, intelligence = 0, agility = 0, luck = 0;
 		int Dwellerstrength = (SPECIAL_ / 1000000);
 		int Dwellerperception = (SPECIAL_ / 100000) - (Dwellerstrength * 10);
 		int Dwellerendurance = (SPECIAL_ / 10000) - (Dwellerstrength * 100) - (Dwellerperception * 10);
 		int Dwellercharisma = (SPECIAL_ / 1000) - (Dwellerstrength * 1000) - (Dwellerperception * 100) - (Dwellerendurance * 10);
 		int Dwellerintelligence = (SPECIAL_ / 100) - (Dwellerstrength * 10000) - (Dwellerperception * 1000) - (Dwellerendurance * 100) - (Dwellercharisma * 10);
-		int Dwelleragility = (SPECIAL_)-(Dwellerstrength * 100000) - (Dwellerperception * 10000) - (Dwellerendurance * 1000) - (Dwellercharisma * 100) - (Dwellerintelligence * 10);
-		int Dwellerluck = (SPECIAL_)-(Dwellerstrength * 100000) - (Dwellerperception * 100000) - (Dwellerendurance * 10000) - (Dwellercharisma * 1000) - (Dwellerintelligence * 100) - (Dwelleragility * 10);\
+		int Dwelleragility = (SPECIAL_/10)-(Dwellerstrength * 100000) - (Dwellerperception * 10000) - (Dwellerendurance * 1000) - (Dwellercharisma * 100) - (Dwellerintelligence * 10);
+		int Dwellerluck = (SPECIAL_)-(Dwellerstrength * 1000000) - (Dwellerperception * 100000) - (Dwellerendurance * 10000) - (Dwellercharisma * 1000) - (Dwellerintelligence * 100) - (Dwelleragility * 10);
 		//Now for the Outfits
 		int Outfitstrength = (outfit_->getSPECIAL() / 1000000);
 		int Outfitperception = (outfit_->getSPECIAL() / 100000) - (Outfitstrength * 10);
 		int Outfitendurance = (outfit_->getSPECIAL() / 10000) - (Outfitstrength * 100) - (Outfitperception * 10);
 		int Outfitcharisma = (outfit_->getSPECIAL() / 1000) - (Outfitstrength * 1000) - (Outfitperception * 100) - (Outfitendurance * 10);
 		int Outfitintelligence = (outfit_->getSPECIAL() / 100) - (Outfitstrength * 10000) - (Outfitperception * 1000) - (Outfitendurance * 100) - (Outfitcharisma * 10);
-		int Outfitagility = (outfit_->getSPECIAL()) - (Outfitstrength * 100000) - (Outfitperception * 10000) - (Outfitendurance * 1000) - (Outfitcharisma * 100) - (Outfitintelligence * 10);
-		int Outfitluck = (outfit_->getSPECIAL()) - (Outfitstrength * 100000) - (Outfitperception * 100000) - (Outfitendurance * 10000) - (Outfitcharisma * 1000) - (Outfitintelligence * 100) - (Outfitagility * 10);
+		int Outfitagility = (outfit_->getSPECIAL()/10) - (Outfitstrength * 100000) - (Outfitperception * 10000) - (Outfitendurance * 1000) - (Outfitcharisma * 100) - (Outfitintelligence * 10);
+		int Outfitluck = (outfit_->getSPECIAL()) - (Outfitstrength * 1000000) - (Outfitperception * 100000) - (Outfitendurance * 10000) - (Outfitcharisma * 1000) - (Outfitintelligence * 100) - (Outfitagility * 10);
 		//This adds both the Dweller ans Outfit's stats
 		strength = Outfitstrength + Dwellerstrength;
 		perception = Dwellerperception + Outfitperception;
@@ -135,7 +135,11 @@ returns the current health of the dweller
 /****************************************************************************/
 const int Dweller::getCurrentHealth()
 {
-	return health_;
+	if (health_ >= (100 - radiation_))
+	{
+		this->health_ = 100 - radiation_;
+	}
+	return health_-radiation_;
 }
 /****************************************************************************/
 /*!
@@ -167,7 +171,14 @@ returns the currrent value 0
 /****************************************************************************/
 const int Dweller::getAttackDmg()
 {
-	return 0;
+	if (weapon_ != NULL)
+	{
+		return weapon_->getAttackDmg();
+	}
+	else
+	{
+		return 1;
+	}
 }
 /****************************************************************************/
 /*!
@@ -201,13 +212,16 @@ exceed 100- radiation damages, and sets it if so
 \return
 */
 /****************************************************************************/
-void Dweller::receiveHealthDamage(const int& health_)
+void Dweller::receiveHealthDamage(const int& damage_)
 {
-	if (health_ >= (100 - radiation_))
+	if (health_ - damage_ - radiation_ <= 0)
 	{
-		this->health_ = 100 - radiation_;
+		health_ = 0;
 	}
-	this->health_ = health_;
+	else
+	{
+		health_ -= damage_;
+	}
 }/****************************************************************************/
 /*!
 \brief
@@ -296,8 +310,15 @@ Function that adds health to dweller on use of stimpak, and checks to see if the
 /****************************************************************************/
 void Dweller::useStimpak()
 {
-	health_ += 20;
-	stimpak_ -= 1;
+	if (stimpak_ > 0)
+	{
+		health_ += 20;
+		stimpak_ -= 1;
+		if (health_ >= 100 - radiation_)
+		{
+			health_ = 100 - radiation_;
+		}
+	}
 }
 /****************************************************************************/
 /*!
@@ -313,8 +334,16 @@ Function that recudes radiation damage
 /****************************************************************************/
 void Dweller::useRadAway()
 {
-	radiation_ -= 10;
-	radaway_ -= 1;
+	if (radaway_ > 0)
+	{
+		radiation_ -= 10;
+		health_ -= 10;
+		radaway_ -= 1;
+		if (radiation_ <= 0)
+		{
+			radiation_ = 0;
+		}
+	}
 }
 /****************************************************************************/
 /*!
@@ -330,6 +359,7 @@ Function that assigns outfits to dweller
 /****************************************************************************/
 Outfit* Dweller::assignOutfit(Outfit* outfit_)
 {
+	this->outfit_ = outfit_;
 	return outfit_;
 }
 /****************************************************************************/
@@ -346,6 +376,7 @@ Function that assigns weapons to the Dweller
 /****************************************************************************/
 Weapon* Dweller::assignWeapon(Weapon* weapon_)
 {
+	this->weapon_ = weapon_;
 	return weapon_;
 }/****************************************************************************/
 /*!
@@ -362,7 +393,7 @@ returns the bool isdead value
 bool Dweller::isDead()
 {
 	bool isDead;
-	if (health_ >= 0)
+	if (health_ <= 0)
 	{
 		isDead = true;
 	}

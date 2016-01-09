@@ -27,9 +27,10 @@ Initialises the position of the character with 2 double type values
 
 */
 /****************************************************************************/
-Vec2D::Vec2D(double x, double y)
+Vec2D::Vec2D(double newx, double newy)
 {
-
+	x = newx;
+	y = newy;
 }
 /****************************************************************************/
 /*!
